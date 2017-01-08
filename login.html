@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Math with Friends</title>
+
+        <!-- Added a link to Bootstrap-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+       <link href="https://fonts.googleapis.com/css?family=Exo:700,800i" rel="stylesheet">
+        
+       <!-- Firebase Reference -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
+       <script type="text/javascript" async
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+
+        <style type="text/css">
+        /*CSS stye goes here*/
+            html, body {
+  background: url(http://image.tutorvista.com/cms/images/38/graphing-simultaneous-equation-example-problem.jpg) no-repeat center center;
+    background-size: cover;
+    height: 1000px;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+}
+
+.orange-gradient {
+  
+  margin: 20px 0 20px 0;
+  padding: 0;
+/*  background-color: rgba(255,165,0, 0.4);*/
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(62, 136, 247, 1));
+  border-top: 4px solid orange;
+  border-bottom: 4px solid orange;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.h1, h1 {
+  font-size: 75px;
+  color: rgb(255,165,0);
+  line-height: .2;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px grey;
+  margin-left: 40px;
+  margin-bottom: 0;
+  margin-top: 125px;
+  padding-right: 0;
+  font-family: 'Exo', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#blue {
+  color: rgb(62, 136, 247);
+}
+
+#user-form label {
+  font-family: 'Exo', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+#orangesection {
+  width: 350px;
+  margin-top: 140px;
+  margin-bottom: 140px;
+  margin-right: 0;
+  margin-left: 600px;
+  background-color: orange;
+  padding: 0;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#user-form {
+  margin-top:0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#searchbox {
+  background-color: #fcdc85;
+  margin: 0;
+  padding: 0 0 5px 0;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+input#submit-user, input#add-user  {
+  display: inline-block;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: orange;
+  border: 2px solid #ffffff;
+  letter-spacing: 1px; 
+  margin: 15px;
+  padding: 10px 20px 10px;
+  max-width: 330px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 5px 9px #999;
+}
+
+input#submit-user:hover, input#add-user:hover  {
+  color: orange;
+  background-color: rgb(2, 161, 225);
+  border: 2px solid orange;
+  font-style: bold;
+/*  text-shadow: 2px 2px 2px grey;*/
+}
+
+input#submit-user:active, input#add-user:active {
+  background-color: #ffffff;
+  box-shadow: 5px 5px #666;
+  transform: translateY(4px);
+}
+
+
+div.footer {
+    max-width: 100%;
+    color: orange;
+    font-size: 16px;
+    height: 85px;
+    line-height: 65px;
+    text-align: center;
+}
+
+        </style>
+
+    </head>
+<body>
+
+    <div >
+        <h1>MATH <span id="blue">with Friends</span></h1>
+    </div>
+
+<div class="orange-gradient">
+        <div class="container">
+          <div id="orangesection">
+                <div id="searchbox">
+                    <form id="user-form">
+                        <label for="user-input">Username</label>
+                        <input type="text" id="user-input">
+                        <label for="password-input">Password</label>
+                        <input type="text" id="password-input">
+                        <input id="submit-user" type="submit" value="Log In">
+                        <input id="add-user" type="submit" value="New User">
+                    </form>
+                </div>
+          </div>
+    </div>
+</div>
+
+    <div class="footer">
+      <div >
+          <p>&copy; Copyright 2017</p>
+      </div>
+    </div>
+
+
+
+  
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<!--     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script> -->
+
+    <script type="text/javascript" src="assets/javascript/app.js">
+
+    </script>
+
+</body>
+</html>

@@ -10,6 +10,10 @@
         <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+       <!-- Firebase Reference -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
        <script type="text/javascript" async
             src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
         <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
@@ -48,9 +52,23 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
 	<script type="text/javascript">
     // <script type="text/javascript" src="assets/javascript/app.js">
-    
+
 // As system, it will generate a math problem and present to both users
 // Javascript and jQuery goes here
+
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAvn7BoFuTiM_rbCf5x0IZk7asIcsJl_XE",
+    authDomain: "ghostbusterproject1.firebaseapp.com",
+    databaseURL: "https://ghostbusterproject1.firebaseio.com",
+    storageBucket: "ghostbusterproject1.appspot.com",
+    messagingSenderId: "519386657422"
+  };
+  
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
 $(document).ready(function(){
 
     var correctanswer = 0;
