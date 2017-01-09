@@ -10,7 +10,9 @@
         <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-
+       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+       <link href="https://fonts.googleapis.com/css?family=Exo:700,800i" rel="stylesheet">
+        
        <!-- Firebase Reference -->
         <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 
@@ -18,221 +20,52 @@
             src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
         <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
 
-        <style type="text/css">
-        /*CSS stye goes here*/
-            h1 {
-            	font-size: 30px
-            }
-
-            p {
-            	font-size: 24px;
-            }
-
-            #problems {
-                font-size: 24px;
-            }
-
-        </style>
-
+        
     </head>
+    
 <body>
-    
-    <div id="playerscore"></div>    
-    <div id="problems"></div>
-    <input type='text' id="userAnswer" value=''>
-    <button id="submitAnswer">Submit Answer</button>
-   <!--  <p>When `a != 0`, there are two solutions to `ax^2 + bx + c = 0` and
-        they are</p>
-    <p style="text-align:center">
-             `6 + 7 = x - 7`
-    </p> -->
+
+    <div >
+        <h1>MATH <span id="blue">with Friends</span></h1>
+    </div>
+
+<div class="body-gradient">
+        <div class="container">
+          <div id="orangesection">
+                <div id="searchbox">
+                    <form id="user-form">
+                        <label for="user-input">Username</label>
+                        <input type="text" id="user-input">
+                        <label for="password-input">Password</label>
+                        <input type="password" id="password-input">
+                        <input id="submit-user" type="submit" value="Log In">
+                        <a id="add-user" href="register.html" >New User</a>
+                        <br>
+                    </form>
+                    <!--We'll erase this when login works to play the game-->
+                    <a id="mathtest" href="mathtrivia.html">Test Math</a>
+                    <!--We'll erase this when login works to play the game-->
+                </div>
+          </div>
+    </div>
+</div>
+
+    <div class="footer">
+      <div >
+          <p>&copy; Copyright 2017</p>
+      </div>
+    </div>
 
 
-<!-- Added link to the jQuery Library --> 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
-	<script type="text/javascript">
-    // <script type="text/javascript" src="assets/javascript/app.js">
 
-// As system, it will generate a math problem and present to both users
-// Javascript and jQuery goes here
-
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAvn7BoFuTiM_rbCf5x0IZk7asIcsJl_XE",
-    authDomain: "ghostbusterproject1.firebaseapp.com",
-    databaseURL: "https://ghostbusterproject1.firebaseio.com",
-    storageBucket: "ghostbusterproject1.appspot.com",
-    messagingSenderId: "519386657422"
-  };
   
-  firebase.initializeApp(config);
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<!--     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script> -->
 
-  var database = firebase.database();
+    <script type="text/javascript" src="assets/javascript/app.js">
 
-$(document).ready(function(){
+    </script>
 
-    var correctanswer = 0;
-    var wronganswer = 0;
-
-    function displayscore(){
-            $('#playerscore').html('Correct Answer: ' + correctanswer + 
-                                   '<br>Wrong Answer: ' + wronganswer);
-        }
-
-    var problem1 = {
-        question: "(8 - 1) + x = 3 + (4 + 5)",
-        correct: 5
-    };
-
-    var problem2 = {
-        question: "x(4 + 5) = 3 * 4 + 3 * 5",
-        correct: 3
-    };
-
-    var problem3 = {
-        question: "(x + 5)x = (8 - 4) + 10",
-        correct: 2
-    };
-
-    var problem4 = {
-        question: "6 * x - 9 = 11 * 3",
-        correct: 7
-    };
-
-    var problem5 = {
-        question: "(9 - 3 * 1) * 4 = x",
-        correct: 24
-    };
-
-    var problem6 = {
-        question: "1 /(7 - 6) = x",
-        correct: 1
-    };
-
-    var problem7 = {
-        question: "9 - 2 * 1 + 3 = x",
-        correct: 10
-    };
-
-    var problem8= {
-        question: "(5 + 2)/7 = x",
-        correct: 1
-    };
-
-    var problem9 = {
-        question: "2 + 4 * (8 - 4) = x",
-        correct: 24
-    };
-
-    var problem9 = {
-        question: "9 - x * 2 = 5 * 4 + 3",
-        correct: 5
-    };
-
-    var problem10 = {
-        question: "(100  –  100) ÷ 129 ÷ 74 ÷ 64 = x",
-        correct: 0
-    };
-var userAnswer;
-prob1();
-    function prob1(){
-        $("#userAnswer").val("");
-        $('#problems').html("\`" + problem1.question + "\`");
-        $('#submitAnswer').on("click", function(){
-            userAnswer = $('#userAnswer').val().trim();
-            if (userAnswer != problem1.correct){
-                wronganswer++;
-                prob2();
-                console.log('wrong');
-            } else {
-                correctanswer++;
-                prob2();
-                console.log('correct');
-            }
-        
-        })
-    };
-
-    function prob2(){
-        $("#userAnswer").val("");
-        $('#problems').html("\`" + problem2.question + "\`");
-        $('#submitAnswer').on("click", function(){
-            userAnswer = $('#userAnswer').val().trim();
-            if (userAnswer != problem2.correct){
-                wronganswer++;
-                prob3();
-                console.log('wrong');
-            } else {
-                correctanswer++;
-                prob3();
-                console.log('correct');
-            }
-        
-        })
-    };
-
-    function prob3(){
-        $("#userAnswer").val("");
-        $('#problems').html("\`" + problem3.question + "\`");
-        $('#submitAnswer').on("click", function(){
-            userAnswer = $('#userAnswer').val().trim();
-            if (userAnswer != problem3.correct){
-                wronganswer++;
-                prob4();
-                console.log('wrong');
-            } else {
-                correctanswer++;
-                prob4();
-                console.log('correct');
-            }
-       
-        })
-    };
-
-    function prob4(){
-        $("#userAnswer").val("");
-        $('#problems').html("\`" + problem4.question + "\`");
-        $('#submitAnswer').on("click", function(){
-            userAnswer = $('#userAnswer').val().trim();
-            if (userAnswer != problem4.correct){
-                wronganswer++;
-                prob5();
-                console.log('wrong');
-            } else {
-                correctanswer++;
-                prob5();
-                console.log('correct');
-            }
-       
-        })
-    };
-
-     function prob5(){
-        $("#userAnswer").val("");
-        $('#problems').html("\`" + problem5.question + "\`");
-        $('#submitAnswer').on("click", function(){
-            userAnswer = $('#userAnswer').val().trim();
-            if (userAnswer != problem5.correct){
-                wronganswer++;
-                restart();
-                console.log('wrong');
-            } else {
-                correctanswer++;
-                restart();
-                console.log('correct');
-            }
-        
-        })
-    };
-
-    function restart(){
-            displayscore();
-            $('#problems').hide();
-            };
-
-
-});
-	</script>
-    
 </body>
 </html>

@@ -31,6 +31,7 @@
         <div class="container">
           <div id="orangesection">
                 <div id="searchbox">
+
                     <form role="form">
                         <div class="form-group">
                           <label for="username-input">User Name:</label>
@@ -50,6 +51,7 @@
                          </div>
                         <input class="btn btn-default" id="add-user" type="submit">
                       </form>
+
                 </div>
           </div>
     </div>
@@ -68,8 +70,9 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <!--     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script> -->
 
-    <script type="text/javascript" src="assets/javascript/app.js">
-
+    <script type="text/javascript">
+    // <script type="text/javascript" src="assets/javascript/app.js">
+ 
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAvn7BoFuTiM_rbCf5x0IZk7asIcsJl_XE",
@@ -78,7 +81,6 @@
     storageBucket: "ghostbusterproject1.appspot.com",
     messagingSenderId: "519386657422"
   };
-  
   firebase.initializeApp(config);
 
   var database = firebase.database();
@@ -101,9 +103,9 @@
       comment = $("#comment-input").val().trim();
 
       // Code for the push
-      dataRef.ref().push({
+      database.ref().push({
 
-        name: name,
+        username: username,
         email: email,
         password: password,
         comment: comment,
@@ -111,6 +113,13 @@
         wins:wins,
         losses:losses
       });
+
+      // Clears all of the text-boxes
+      //taking the input in html and making it blank in input field
+      $("#username-input").val("");
+      $("#email-input").val("");
+      $("#password-input").val("");
+      $("#comment-input").val("");
 
       // Don't refresh the page!
       return false;
