@@ -18,7 +18,11 @@
        <script type="text/javascript" async
             src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
         <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
-
+    <style type="text/css">
+        .selectuser {
+            background-color: rgba(255,255,24, 1)
+        }
+    </style>
     <script>
     // Initialize Firebase
     var config = {
@@ -389,15 +393,22 @@ var game = {
             });
 
             console.log(newArray)
-            var newTable = '<table style="width:100%"><tr><th>Email</th><th>Points</th></tr>'
-            newArray.forEach((item)=>{
-                newTable += '<tr>'
-                newTable += '<td>' + item.email + '</td>'
-                newTable += '<td>' + item.points + '</td>'
-                newTable += '</tr>'
-            })
-            newTable += '</table>'
-            $('#subwrapper').append(newTable)
+            var newTable = '<table style="width:100%"><tr><th>Rank</th><th>Email</th><th>Points</th></tr>'
+                newArray.forEach((item, index)=>{
+                    newTable += '<td>' + (index + 1) + '</td>'
+                    
+                    if (item.email == window.currentUser.email){
+                        newTable += '<tr class="selectuser">'    
+                    } else {
+                        newTable += '<tr>'    
+                    }
+                    
+                    newTable += '<td>' + item.email + '</td>'
+                    newTable += '<td>' + item.points + '</td>'
+                    newTable += '</tr>'
+                })
+                newTable += '</table>'
+                $('#subwrapper').append(newTable)
 
             
   
