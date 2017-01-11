@@ -159,6 +159,7 @@
         if (user) {
             console.log("we got user detail as a string");
             console.log(user);
+            window.currentUser = user;
           // User is signed in.
           // var displayName = user.displayName;
           // var email = user.email;
@@ -364,6 +365,13 @@ var game = {
         $('#subwrapper').append("<br>Incorrect: "+game.incorrect);
         $('#subwrapper').append("<br>Unanswered: "+game.unanswered);
         $('#subwrapper').append("<br><button id='reset'>RESET</button>")
+        var saveObject = {}
+
+            saveObject[window.currentUser] = 7
+
+            firebase.database().ref('score/').set(saveObject).then(()=>{
+                console.log('data has been saved')
+            });
 
     },
     clicked: function(e){
