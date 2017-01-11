@@ -16,6 +16,9 @@
        <!-- Firebase Reference -->
         <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 
+        <!-- Firebase Authentication Reference -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
+
        <script type="text/javascript" async
             src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
         <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
@@ -72,6 +75,11 @@
 
     <script type="text/javascript">
     // <script type="text/javascript" src="assets/javascript/app.js">
+
+    var firebase = require("https://ghostbusterproject1.firebaseio.com");
+    // var firebase = require("firebase/app");
+    require("firebase/auth");
+    require("firebase/database");
  
   // Initialize Firebase
   var config = {
@@ -93,6 +101,23 @@
   var wins = 0;
   var losses = 0;
 
+  var ref = new firebase("https://ghostbusterproject1.firebaseio.com");
+  // var ref = new Firebase("https://demo.firebaseio-demo.com");
+  var authClient = new FirebaseAuthClient(ref, function(error, user) {
+      if (error) {
+        alert(error);
+        return;
+      }
+      if (user) {
+        // User is already logged in.
+        doLogin(user);
+      } else {
+        // User is logged out.
+        showLoginBox();
+      }
+  });
+
+
   // Capture Button Click
     $("#add-user").on("click", function() {
 
@@ -101,6 +126,14 @@
       email = $("#email-input").val().trim();
       password = $("#password-input").val().trim();
       comment = $("#comment-input").val().trim();
+      authClient.createUser(email, password, function(error,  user) {
+          if (!error) {
+            doLogin(user);
+          } else {
+            alert(error);
+          }
+        });
+
 
       // Code for the push
       database.ref().push({

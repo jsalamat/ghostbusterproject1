@@ -15,6 +15,8 @@
         
        <!-- Firebase Reference -->
         <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+        <!-- Firebase Authentication Reference -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
 
        <script type="text/javascript" async
             src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
@@ -34,8 +36,8 @@
           <div id="orangesection">
                 <div id="searchbox">
                     <form id="user-form">
-                        <label for="user-input">Username</label>
-                        <input type="text" id="user-input">
+                        <label for="email-input">Email</label>
+                        <input type="text" id="email-input">
                         <label for="password-input">Password</label>
                         <input type="password" id="password-input">
                         <input id="submit-user" type="submit" value="Log In">
@@ -64,6 +66,45 @@
 <!--     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script> -->
 
     <script type="text/javascript" src="assets/javascript/app.js">
+
+    // Initialize Firebase
+    var firebase = require("https://ghostbusterproject1.firebaseio.com");
+    // var firebase = require("firebase/app");
+    require("firebase/auth");
+    require("firebase/database");
+
+  var config = {
+    apiKey: "AIzaSyAvn7BoFuTiM_rbCf5x0IZk7asIcsJl_XE",
+    authDomain: "ghostbusterproject1.firebaseapp.com",
+    databaseURL: "https://ghostbusterproject1.firebaseio.com",
+    storageBucket: "ghostbusterproject1.appspot.com",
+    messagingSenderId: "519386657422"
+  };
+  firebase.initializeApp(config);
+
+  var ref = new firebase("https://ghostbusterproject1.firebaseio.com");
+  // var ref = new Firebase("https://demo.firebaseio-demo.com");
+  var authClient = new FirebaseAuthClient(ref, function(error, user) {
+      if (error) {
+        alert(error);
+        return;
+      }
+      if (user) {
+        // User is already logged in.
+        doLogin(user);
+      } else {
+        // User is logged out.
+        showLoginBox();
+      }
+  });
+
+  $("#submit-user").on("click", function() {
+    authClient.login("password", {
+      email: $("#email-input").val(),
+      password: $("#password-input").val(),
+      // rememberMe: $("#rememberCheckbox").val()
+    });
+  });
 
     </script>
 
