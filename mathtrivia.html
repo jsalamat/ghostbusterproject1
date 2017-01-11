@@ -377,7 +377,19 @@ var game = {
             firebase.database().ref('score/').once('value').then(function(snapshot) {
         
         var stuff = snapshot.val();
-        console.log(stuff)
+        var newArray = []
+
+        var keys = Object.keys(stuff);
+        keys.forEach((item)=>{
+            newArray.push(stuff[item])
+        })
+
+        newArray.sort(function (a, b) {
+            return a.points - b.points;
+        });
+
+        console.log(newArray)
+        
   
     });
 });
