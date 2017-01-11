@@ -373,7 +373,13 @@ var game = {
 
 
         firebase.database().ref('score/' + window.currentUser.uid).set(saveObject).then(()=>{
-            console.log('data has been saved')
+            
+            firebase.database().ref('score/').once('value').then(function(snapshot) {
+        
+        var stuff = snapshot.val();
+        console.log(stuff)
+  
+    });
 });
 
     },
