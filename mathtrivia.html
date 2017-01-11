@@ -367,13 +367,11 @@ var game = {
         $('#subwrapper').append("<br><button id='reset'>RESET</button>")
         var saveObject = {}
 
-        saveObject[window.currentUser] = 7
+        saveObject[window.currentUser.email] = 7
 
-        var temp = {
-            blabal: 8
-        }
+       
 
-        firebase.database().ref('score/').set(temp).then(()=>{
+        firebase.database().ref('score/').set(saveObject).then(()=>{
             console.log('data has been saved')
 });
 
