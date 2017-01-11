@@ -372,24 +372,34 @@ var game = {
 
 
 
-        firebase.database().ref('score/' + window.currentUser.uid).set(saveObject).then(()=>{
+      firebase.database().ref('score/' + window.currentUser.uid).set(saveObject).then(()=>{
+    
+        firebase.database().ref('score/').once('value').then(function(snapshot) {
             
-            firebase.database().ref('score/').once('value').then(function(snapshot) {
-        
-        var stuff = snapshot.val();
-        var newArray = []
+            var stuff = snapshot.val();
+            var newArray = []
 
-        var keys = Object.keys(stuff);
-        keys.forEach((item)=>{
-            newArray.push(stuff[item])
-        })
+            var keys = Object.keys(stuff);
+            keys.forEach((item)=>{
+                newArray.push(stuff[item])
+            })
 
-        newArray.sort(function (a, b) {
-            return a.points - b.points;
-        });
+            newArray.sort(function (a, b) {
+                return b.points - a.points;
+            });
 
-        console.log(newArray)
-        
+            console.log(newArray)
+            var newTable = '<table style="width:100%"><tr><th>Email</th><th>Points</th></tr>'
+            newArray.forEach((item)=>{
+                newTable += '<tr>'
+                newTable += '<td>' + item.email + '</td>'
+                newTable += '<td>' + item.points + '</td>'
+                newTable += '</tr>'
+            })
+            newTable += '</table>'
+            $('#subwrapper').append(newTable)
+
+            
   
     });
 });
