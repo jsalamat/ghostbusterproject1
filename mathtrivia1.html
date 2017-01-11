@@ -159,7 +159,7 @@
         // [START_EXCLUDE silent]
         // document.getElementById('quickstart-verify-email').disabled = true;
         // [END_EXCLUDE]
-//this what connect the user from login. window.currentUser = user is one thats login currently
+
         if (user) {
             console.log("we got user detail as a string");
             console.log(user);
@@ -369,26 +369,24 @@ var game = {
         $('#subwrapper').append("<br>Incorrect: "+game.incorrect);
         $('#subwrapper').append("<br>Unanswered: "+game.unanswered);
         $('#subwrapper').append("<br><button id='reset'>RESET</button>")
-//this data variable we are saving in window
         var saveObject = {
             email: window.currentUser.email,
             points: game.correct
         }
-// Then saveObject is set() to the data to be added
-//I'm using the currentUser.uid to grab the current. 
-//I had error when use window.currentUser.email can't read as sting when grabbing '@', 'period(.)'
-//We reference from database to grab other uid from other user 
+
+
+
       firebase.database().ref('score/' + window.currentUser.uid).set(saveObject).then(()=>{
     
         firebase.database().ref('score/').once('value').then(function(snapshot) {
             
             var stuff = snapshot.val();
-            var newArray = [];
+            var newArray = []
 
             var keys = Object.keys(stuff);
             keys.forEach((item)=>{
-                newArray.push(stuff[item]);
-            });
+                newArray.push(stuff[item])
+            })
 
             newArray.sort(function (a, b) {
                 return b.points - a.points;
@@ -400,17 +398,19 @@ var game = {
                     
                     
                     if (item.email == window.currentUser.email){
-                        newTable += '<tr class="selectuser">';    
+                        newTable += '<tr class="selectuser">'    
                     } else {
-                        newTable += '<tr>' ;   
+                        newTable += '<tr>'    
                     }
-                    newTable += '<td>' + (index + 1) + '</td>';
-                    newTable += '<td>' + item.email + '</td>';
-                    newTable += '<td>' + item.points + '</td>';
-                    newTable += '</tr>';
+                    newTable += '<td>' + (index + 1) + '</td>'
+                    newTable += '<td>' + item.email + '</td>'
+                    newTable += '<td>' + item.points + '</td>'
+                    newTable += '</tr>'
                 })
-                newTable += '</table>';
-                $('#subwrapper').append(newTable) ;          
+                newTable += '</table>'
+                $('#subwrapper').append(newTable)
+
+            
   
     });
 });
