@@ -395,14 +395,14 @@ var game = {
             console.log(newArray)
             var newTable = '<table style="width:100%"><tr><th>Rank</th><th>Email</th><th>Points</th></tr>'
                 newArray.forEach((item, index)=>{
-                    newTable += '<td>' + (index + 1) + '</td>'
+                    
                     
                     if (item.email == window.currentUser.email){
                         newTable += '<tr class="selectuser">'    
                     } else {
                         newTable += '<tr>'    
                     }
-                    
+                    newTable += '<td>' + (index + 1) + '</td>'
                     newTable += '<td>' + item.email + '</td>'
                     newTable += '<td>' + item.points + '</td>'
                     newTable += '</tr>'
