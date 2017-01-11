@@ -365,17 +365,15 @@ var game = {
         $('#subwrapper').append("<br>Incorrect: "+game.incorrect);
         $('#subwrapper').append("<br>Unanswered: "+game.unanswered);
         $('#subwrapper').append("<br><button id='reset'>RESET</button>")
-        var saveObject = {}
-
-            saveObject[window.currentUser.uid] = {
-                email: window.currentUser.email,
-                points: game.correct
-            }
+        var saveObject = {
+            email: window.currentUser.email,
+            points: game.correct
+        }
 
 
 
-            firebase.database().ref('score/').set(saveObject).then(()=>{
-                console.log('data has been saved')
+        firebase.database().ref('score/' + window.currentUser.uid).set(saveObject).then(()=>{
+            console.log('data has been saved')
 });
 
     },
