@@ -1,5 +1,5 @@
-            html, body {
-  background: url(http://image.tutorvista.com/cms/images/38/graphing-simultaneous-equation-example-problem.jpg) no-repeat center center;
+html, body {
+  background: url(../images/background-graph.jpg) no-repeat center center;
     background-size: cover;
     height: 1000px;
 }
@@ -127,4 +127,15 @@ a#mathtest{
   margin: 0 auto;
   padding-left: 120px;
 } 
-/*erase #mathtest when the login works*/
+
+.selectuser {
+  background-color: rgba(255,255,24, 1)
+}
+
+#leaderboard {
+  background-color: rgba(239, 245, 254, 1)
+}
+
+#currentplayer {
+  background-color: rgba(239, 245, 254, 1)
+}
