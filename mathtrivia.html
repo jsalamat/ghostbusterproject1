@@ -24,10 +24,11 @@
         .selectuser {
             background-color: rgba(255,255,24, 1)
         }
-        .leaderboard {
-            background-color: rgba(255, 255, 255, 1)
+        #leaderboard {
+            background-color: rgba(239, 245, 254, 1)
         }
         #currentPlayer {
+            background-color: rgba(239, 245, 254, 1)
 
         }
     </style>
@@ -241,6 +242,9 @@
                             <h2>Fill the value for X and submit your answer</h2>
                             <button id="start">Start</button>
                         </div>
+                        <div id="leaderboard">
+
+                        </div>
                     </div>
 
                 </div>
@@ -426,7 +430,7 @@ var game = {
                     newTable += '</tr>';
                 })
                 newTable += '</table>';
-                $('#subwrapper').append(newTable) ;          
+                $('#leaderboard').append(newTable) ;          
   
     });
 });
