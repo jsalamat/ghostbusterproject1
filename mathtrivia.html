@@ -264,15 +264,9 @@
 // As system, it will generate a math problem and present to both users
 // Javascript and jQuery goes here
 
-  var database = firebase.database();
-
-$("#signOut").on('click',function(event){
-        firebase.auth().signOut();
-        window.location.assign("https://js5ghostbusterproject1.herokuapp.com/index.html");
-    });
-
 $('#start').on('click', function(){
     $('#start').remove();
+    $('#subwrapper').html("<h2>Fill the value for X and submit your answer</h2>");
     game.loadQuestion();
 });
 
@@ -357,7 +351,7 @@ var game = {
         // $('#subwrapper').html('<h2>' + questions[game.currentQuestion].question + '</h2>');
 
             for(var i =3; i<questions[game.currentQuestion].answers.length;i++){
-                $('#subwrapper').append('<input type="number" id="button-'+i+'"">'+'<button id="submitAnswer">'+"Submit Answer"+'</button>');
+                $('#subwrapper').append('<input type="text" id="button-'+i+'"">'+'<button id="submitAnswer">'+"Submit Answer"+'</button>');
             }
 
     },
@@ -413,7 +407,7 @@ var game = {
             });
 //This adding a table to for leader score board.
             console.log(newArray)
-            var newTable = '<table class="leaderboard" style="width:100%"><tr><th>Rank</th><th>Email</th><th>Points</th></tr>'
+            var newTable = '<table style="width:100%"><tr><th>Rank</th><th>Email</th><th>Points</th></tr>'
                 newArray.forEach((item, index)=>{
                     
                     
@@ -460,7 +454,7 @@ var game = {
             game.incorrect++;
             $('#subwrapper').html('<h2>YOU GOT IT WRONG!</h2');
             $('#subwrapper').append('<h3>The Correct Answer Was: '+questions[game.currentQuestion].correctAnswer+ '</h3>');
-            if(game.PcurrentQuestion==questions.length-1){
+            if(game.currentQuestion==questions.length-1){
                 setTimeout(game.results,3*1000);
             } else {
                 setTimeout(game.nextQuestion,3*1000);
@@ -474,8 +468,8 @@ var game = {
         game.unanswered = 0;
         game.loadQuestion();
     }
-
 }
+
 // setTimeout(function(){
 //     var temp = currentUser.email;
 //     var temp2 = currentUser['email'];
