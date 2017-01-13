@@ -27,6 +27,13 @@ limitations under the License.
 
   <link rel="stylesheet" href="main.css">
 
+  <!-- <link rel="stylesheet" href="main.css"> -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo:700,800i" rel="stylesheet">
+
   <!-- Firebase -->
   <!-- ***********************************************************************************************************************
        * TODO(DEVELOPER): Paste the initialization snippet from: Firebase Console > Overview > Add Firebase to your web app. *
@@ -184,7 +191,7 @@ limitations under the License.
           if (!emailVerified) {
             document.getElementById('quickstart-verify-email').disabled = false;
           }
-//This is where you link the game file. 
+          //This is where you link the game file. 
 //window.location mean Window is being main parent object for object location of all various script
           window.location.href = "https://js5ghostbusterproject1.herokuapp.com/mathtrivia.html";
           // [END_EXCLUDE]
@@ -217,15 +224,20 @@ limitations under the License.
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing title -->
-  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+  <!-- <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
         <a href="/"><h3>Firebase Authentication</h3></a>
       </div>
     </div>
-  </header>
+  </header> -->
 
-  <main class="mdl-layout__content mdl-color--grey-100">
+  <div >
+    <h1>MATH <span id="blue">with Friends</span></h1>
+  </div>
+
+
+  <!-- <main class="mdl-layout__content mdl-color--grey-100"> -->
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
 
       <!-- Container for the demo -->
@@ -248,6 +260,12 @@ limitations under the License.
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
 
+
+          <div class="mdl-card__title mdl-color-text--grey-600">
+            <h2> Or &nbsp;&nbsp;&nbsp;</h2>
+            <a href="google-credentials.html"><img src="assets/images/sign-in-google.png" alt="Sign-in using Google"></a>
+          </div>
+
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
@@ -258,7 +276,7 @@ limitations under the License.
       </div>
 
     </div>
-  </main>
+  <!-- </main> -->
 </div>
 </body>
 </html>
