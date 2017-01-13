@@ -42,10 +42,7 @@
     /**
      * Handles the sign in button press.
      */
-    $("#signOut").on('click',function(event){
-        firebase.auth().signOut();
-        window.location.assign("https://www.msn.com/");
-    });
+    
 
     function toggleSignIn() {
       if (firebase.auth().currentUser) {
@@ -257,7 +254,10 @@
 // Javascript and jQuery goes here
 
   // var database = firebase.database();
-
+$("#signOut").on('click',function(event){
+        firebase.auth().signOut();
+        window.location.assign("https://www.msn.com/");
+    });
 
 $('#start').on('click', function(){
     $('#start').remove();
