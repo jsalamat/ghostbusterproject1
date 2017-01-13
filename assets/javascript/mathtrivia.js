@@ -92,7 +92,7 @@ var game = {
         // $('#subwrapper').html('<h2>' + questions[game.currentQuestion].question + '</h2>');
 
             for(var i =3; i<questions[game.currentQuestion].answers.length;i++){
-                $('#subwrapper').append('<input type="text" id="button-'+i+'"">'+'<button id="submitAnswer">'+"Submit Answer"+'</button>');
+                $('#subwrapper').append('<input type="number" id="button-'+i+'"">'+'<button id="submitAnswer">'+"Submit Answer"+'</button>');
             }
 
     },
