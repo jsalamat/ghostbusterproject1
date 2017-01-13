@@ -235,7 +235,7 @@
                         <button id="signOut">Sign Out</button>
                         <div id="currentplayer">
                             
-                            
+
                         </div>
                         <div id="subwrapper">
                             <h2>Fill the value for X and submit your answer</h2>
@@ -265,8 +265,7 @@
 // Javascript and jQuery goes here
 
   // var database = firebase.database();
-var temp = currentUser.email;
-$("#currentplayer").append(temp);
+
 $("#signOut").on('click',function(event){
         firebase.auth().signOut();
         window.location.assign("https://js5ghostbusterproject1.herokuapp.com/index.html");
@@ -475,8 +474,13 @@ var game = {
         game.unanswered = 0;
         game.loadQuestion();
     }
-}
 
+}
+var temp = window.currentUser.email;
+var temp2 = window.currentUser['email'];
+console.log(temp);
+console.log(temp2);
+$("#currentplayer").append(temp);
 	</script>
     
 </body>
