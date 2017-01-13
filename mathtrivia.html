@@ -24,6 +24,12 @@
         .selectuser {
             background-color: rgba(255,255,24, 1)
         }
+        .leaderboard {
+            background-color: rgba(255, 255, 255, 1)
+        }
+        #currentPlayer {
+
+        }
     </style>
     <script>
     // Initialize Firebase
@@ -227,6 +233,7 @@
                     
                         <h3>Math with Friend Trivia</h3>
                         <button id="signOut">Sign Out</button>
+                        <div id="currentplayer"></div>
                         <div id="subwrapper">
                             <h2>Fill the value for X and submit your answer</h2>
                             <button id="start">Start</button>
@@ -255,6 +262,8 @@
 // Javascript and jQuery goes here
 
   // var database = firebase.database();
+
+$("#currentplayer").append(window.currentUser.email);
 $("#signOut").on('click',function(event){
         firebase.auth().signOut();
         window.location.assign("https://js5ghostbusterproject1.herokuapp.com/index.html");
@@ -402,7 +411,7 @@ var game = {
             });
 //This adding a table to for leader score board.
             console.log(newArray)
-            var newTable = '<table style="width:100%"><tr><th>Rank</th><th>Email</th><th>Points</th></tr>'
+            var newTable = '<table class="leaderboard" style="width:100%"><tr><th>Rank</th><th>Email</th><th>Points</th></tr>'
                 newArray.forEach((item, index)=>{
                     
                     
