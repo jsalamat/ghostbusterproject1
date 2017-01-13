@@ -43,9 +43,8 @@
      * Handles the sign in button press.
      */
     $("#signOut").on('click',function(event){
-        debugger;
         firebase.auth().signOut();
-        window.location.href = "https://www.msn.com/";
+        window.location.assign("https://www.msn.com/");
     });
 
     function toggleSignIn() {
