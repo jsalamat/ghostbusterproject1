@@ -42,7 +42,7 @@
     /**
      * Handles the sign in button press.
      */
-    $("#signOut").on('click',function(){
+    $("#signOut").on('click',function(event){
         firebase.auth().signOut();
         window.location.href = "https://www.msn.com/";
     });
