@@ -43,6 +43,7 @@
      * Handles the sign in button press.
      */
     $("#signOut").on('click',function(event){
+        debugger;
         firebase.auth().signOut();
         window.location.href = "https://www.msn.com/";
     });
