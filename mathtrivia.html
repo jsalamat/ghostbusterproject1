@@ -173,13 +173,13 @@
           // var uid = user.uid;
           // var providerData = user.providerData;
           // // [START_EXCLUDE silent]
-          // document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          // document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          // document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           // if (!emailVerified) {
           //   document.getElementById('quickstart-verify-email').disabled = false;
           // }
-          // window.location.href = "https://js5ghostbusterproject1.herokuapp.com/mathtrivia.html";
+          window.location.href = "https://js5ghostbusterproject1.herokuapp.com/index.html";
           // [END_EXCLUDE]
         } else {
           // User is signed out.
@@ -222,7 +222,7 @@
                     <div id="wrapper">
                     
                         <h3>Math with Friend Trivia</h3>
-
+<button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
                         <div id="subwrapper">
                             <button id="start">Start</button>
                         </div>
