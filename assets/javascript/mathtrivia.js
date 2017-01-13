@@ -26,33 +26,43 @@ $(document).on('click', '#reset', function(){
 
 var questions = [{
         question: "(5 + 2)/7 = x",
+        answers: ["1", "7", "14", "10"],
         correctAnswer: "1"
     }, {
         question: "(9 - 3 * 1) * 4 = x",
+        answers: ["4", "24", "14", "1"],
         correctAnswer: "24"
     }, {
         question: "9 - 2 * 1 + 3 = x",
+        answers: ["10", "5", "14", "1"],
         correctAnswer: "10"
     }, {
         question: "2 + 4 * (8 - 4) = x",
+        answers: ["4", "24", "14", "1"],
         correctAnswer: "24"
     }, {
         question: "1 /(7 - 6) = x",
+        answers: ["-1", "2", "0", "1"],
         correctAnswer: "1"
     }, {
         question: "(8 - 1) + x = 3 + (4 + 5)",
+        answers: ["7", "2", "6", "5"],
         correctAnswer: "5"
     }, {
         question: "x(4 + 5) = 3 * 4 + 3 * 5",
+        answers: ["8", "3", "6", "12"],
         correctAnswer: "3"
     }, {
         question: "(x + 5)x = (8 - 4) + 10",
+        answers: ["9", "13", "2", "5"],
         correctAnswer: "2",
     }, {
         question: "6 * x - 9 = 11 * 3",
+        answers: ["11", "7", "3", "9"],
         correctAnswer: "7"
     }, {
         question: "9 - x * 2 = 5 * 4 + 3",
+        answers: ["5", "25", "14", "10"],
         correctAnswer: "5"
     }];
 
