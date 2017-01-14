@@ -121,7 +121,7 @@ var game = {
         $('#subwrapper').append("Correct: "+game.correct);
         $('#subwrapper').append("<br>Incorrect: "+game.incorrect);
         $('#subwrapper').append("<br>Unanswered: "+game.unanswered);
-        $('#subwrapper').append("<br><button id='reset'>RESET</button>")
+        // $('#subwrapper').append("<br><button id='reset'>RESET</button>")
 //this data variable we are saving in window
         var saveObject = {
             email: window.currentUser.email,
