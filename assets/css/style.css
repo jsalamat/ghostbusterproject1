@@ -155,5 +155,6 @@ a#mathtest{
 }
 
 #currentplayer {
+  text-shadow: 2px 2px 5px grey;
   background-color: rgba(240, 173, 78, 0)
 }
