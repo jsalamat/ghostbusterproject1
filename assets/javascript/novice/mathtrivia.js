@@ -25,45 +25,45 @@ $(document).on('click', '#reset', function(){
 })
 
 var questions = [{
-        question: "13 + 7 = x",
-        answers: ["1", "7", "14", "20"],
-        correctAnswer: "20"
-    }, {
-        question: "11 -7 - 1 - 2 = x",
-        answers: ["4", "24", "14", "1"],
+        question: "(5 + 2)/7 = x",
+        answers: ["1", "7", "14", "10"],
         correctAnswer: "1"
     }, {
-        question: "9 - 2 * 11 = x",
-        answers: ["77", "5", "14", "1"],
-        correctAnswer: "77"
+        question: "(9 - 3 * 1) * 4 = x",
+        answers: ["4", "24", "14", "1"],
+        correctAnswer: "24"
     }, {
-        question: "4(8 + 10) = x",
-        answers: ["84", "48", "64", "72"],
-        correctAnswer: "72"
-    }, {
-        question: "10 /(3 - 2) = x",
-        answers: ["-1", "2", "10", "1"],
+        question: "9 - 2 * 1 + 3 = x",
+        answers: ["10", "5", "14", "1"],
         correctAnswer: "10"
     }, {
-        question: "9 * 3 + 5 = x",
+        question: "2 + 4 * (8 - 4) = x",
+        answers: ["4", "24", "14", "1"],
+        correctAnswer: "24"
+    }, {
+        question: "1 /(7 - 6) = x",
+        answers: ["-1", "2", "0", "1"],
+        correctAnswer: "1"
+    }, {
+        question: "(8 - 1) + x = 3 + (4 + 5)",
         answers: ["7", "2", "6", "5"],
-        correctAnswer: "32"
+        correctAnswer: "5"
     }, {
         question: "x(4 + 5) = 3 * 4 + 3 * 5",
         answers: ["8", "3", "6", "12"],
         correctAnswer: "3"
     }, {
-        question: "33/11 = x",
-        answers: ["9", "13", "3", "5"],
-        correctAnswer: "3",
+        question: "(x + 5)x = (8 - 4) + 10",
+        answers: ["9", "13", "2", "5"],
+        correctAnswer: "2",
     }, {
-        question: "9 * 1/9 = x",
-        answers: ["11", "1", "3", "9"],
-        correctAnswer: "1"
+        question: "6 * x - 9 = 11 * 3",
+        answers: ["11", "7", "3", "9"],
+        correctAnswer: "7"
     }, {
-        question: "5 * 5 * 10 = X",
-        answers: ["5", "250", "14", "10"],
-        correctAnswer: "250"
+        question: "9 - x * 2 = 5 * 4 + 3",
+        answers: ["5", "25", "14", "10"],
+        correctAnswer: "5"
     }];
 
 
