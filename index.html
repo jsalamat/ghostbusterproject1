@@ -21,15 +21,6 @@
         <!-- Added link to the jQuery Library --> 
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
             <style type="text/css">
-        
-            </style>
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
-
-  <script type="text/javascript" src="assets/javascript/indexsignin.js"></script>
-
-   <style type="text/css">
             #logo {
               text-align: center;
             }
@@ -83,6 +74,11 @@
             }
             </style>
 
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+
+  <script type="text/javascript" src="assets/javascript/indexsignin.js"></script>
+
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -96,7 +92,7 @@
     </div>
   </header> -->
 
-  <div >
+  <div id="logo">
     <h1>MATH <span id="blue">with Friends</span></h1>
   </div>
 
@@ -107,35 +103,36 @@
       <!-- Container for the demo -->
       <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
         <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
-          <h2 class="mdl-card__title-text">Firebase Email &amp; Password Authentication</h2>
+          <h2 class="mdl-card__title-text" style="padding-top:20px;color:rgb(243,251,255);">Welcome! Please Sign In</h2>
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-          <p>Enter an email and password below and either sign in to an existing account or sign up</p>
 
-          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
-          &nbsp;&nbsp;&nbsp;
-          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;margin-top:15px;font-size:20px;" type="text" id="email" name="email" placeholder="Email"/>
+          
+          <br><br>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;font-size:20px;" type="password" id="password" name="password" placeholder="Password"/>
           <br/><br/>
-          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin" style="cursor:pointer;">Login</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
           &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
+          <br>
+          
 
 
           <div class="mdl-card__title mdl-color-text--grey-600">
-            <h2> Or &nbsp;&nbsp;&nbsp;</h2>
+            <h2 style="color:rgb(243,251,255);padding-bottom:10px;font-size:20px;"> Or &nbsp;&nbsp;&nbsp;</h2>
             <a href="google-credentials.html"><img src="assets/images/sign-in-google.png" alt="Sign-in using Google"></a>
           </div>
-
+          <br><br>
+          <br><br>
+          <a href=# style="text-decoration:underline;" class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Forgot Password?</a>
           <!-- Container where we'll display the user details -->
-          <div class="quickstart-user-details-container">
+          <!-- <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
-          </div>
+          </div> -->
         </div>
       </div>
 
