@@ -20,6 +20,17 @@ body {
 
 }
 
+#submitAnswer {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  background-color: rgb(255,165, 0);
+  border-bottom: 4px solid rgb(209,135, 0);
+  margin-bottom: 20px;
+  margin-left: 8px;
+}
 
 .h1, h1 {
   font-size: 75px;
@@ -49,7 +60,7 @@ body {
 }
 
 #orangesection {
-  width: 350px;
+/*  width: 350px;
   margin: 0 auto;
   margin-top: 140px;
   margin-bottom: 140px;
@@ -58,7 +69,7 @@ body {
   border-radius: 10px;
   border-top: 2px solid #ffffff;
   border-bottom: 2px solid #ffffff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
 }
 
 #user-form {
@@ -68,10 +79,16 @@ body {
 }
 
 #searchbox {
-  background-color: #fcdc85;
-  margin: 0;
-  border-radius: 10px;
-  padding: 20px 10px 20px 20px;
+  width: 550px;
+  height: 500px;
+  text-align: center;
+  background-color: rgba(62, 136, 247, 0.7); /*used rgba to add opacity*/
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 15px;
+  box-shadow: 10px 10px 5px grey;
+  border-radius: 15px;
+  padding-bottom: 20px;
 }
 
 .container {
