@@ -1,10 +1,10 @@
 // Initialize Firebase
     var config = {
-    apiKey: "AIzaSyAvn7BoFuTiM_rbCf5x0IZk7asIcsJl_XE",
-    authDomain: "ghostbusterproject1.firebaseapp.com",
-    databaseURL: "https://ghostbusterproject1.firebaseio.com",
-    storageBucket: "ghostbusterproject1.appspot.com",
-    messagingSenderId: "519386657422"
+    apiKey: "AIzaSyCxacjXert8mqC4twM14IJvbrj5-eSO0C8",
+    authDomain: "jsmathwithfriends.firebaseapp.com",
+    databaseURL: "https://jsmathwithfriends.firebaseio.com",
+    storageBucket: "jsmathwithfriends.appspot.com",
+    messagingSenderId: "647213947719"
   };
     firebase.initializeApp(config);
     
