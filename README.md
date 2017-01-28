@@ -11,3 +11,20 @@ Score is based on how fast they solve problems and if the problems are solved co
 + Christopher Walhlers [github](https://github.com/cwahlers)
 + Michael Emmanuel [github](https://github.com/mike092235)
 
+## Technologies used:
++ HTML
++ CSS
++ JavaScript
++ jQuery
++ Firebase
++ Google Developers
++ Materialize
++ MathJax
++ Animate.css
++ [Trello](https://trello.com/b/afMd9uru/ghostbuster-group-project-1)
+
+## Feature:
++ Firebase.auth  is applied to have a login and authentication for particular user that is current in the Math with Friends App.
++ Google Developver is required along with firebase.auth so google user can login easier using their google account as well invite their friends in googlew.
++ Leaderboard is applied to be compared to all user that sign up to Math with Friends App.
++ Materialize and Animate.css are applied to make the app dynamic and pleasing to the user
