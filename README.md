@@ -6,6 +6,10 @@ App will create a set problems and time for that particular user.
 It will be compared to other players or the user can try set of problems that their friends attempt and try to beat their score.
 Score is based on how fast they solve problems and if the problems are solved correctly. So can you be the Math King!
 
+![Math With Friends Login](/assets/images/mathdemoAImgur.gif "Login and authetication")
+
+![Math With Friends Game](/assets/images/mathdemoBImgur.gif "Game Play")
+
 ## Contributors:
 + Jon Salamat [github](https://github.com/jsalamat)
 + Christopher Walhlers [github](https://github.com/cwahlers)
